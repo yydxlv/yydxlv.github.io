@@ -5,16 +5,30 @@
   
   <title>TimeMap | 你还想活吗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有多少和我一起走进这个尘世的人们已经离去了">
+  <meta name="description" content="Building a time map is easy. First, imagine a series of events as dots along a time axis. The time intervals between each event are labeled as t1, t2, t3, t4, …
+A time map is simply a two-dimensional">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TimeMap">
 <meta property="og:url" content="http://yoursite.com/2015/11/23/TimeMap/index.html">
 <meta property="og:site_name" content="你还想活吗">
-<meta property="og:description" content="有多少和我一起走进这个尘世的人们已经离去了">
-<meta property="og:updated_time" content="2015-11-23T12:10:40.610Z">
+<meta property="og:description" content="Building a time map is easy. First, imagine a series of events as dots along a time axis. The time intervals between each event are labeled as t1, t2, t3, t4, …
+A time map is simply a two-dimensional">
+<meta property="og:image" content="http://i.imgur.com/WLplFBS.png">
+<meta property="og:image" content="http://i.imgur.com/vp71JZ5.png">
+<meta property="og:image" content="http://i.imgur.com/QkwvJDE.png">
+<meta property="og:image" content="http://i.imgur.com/r6d2gVS.png">
+<meta property="og:image" content="http://i.imgur.com/VtYFme9.png">
+<meta property="og:image" content="http://i.imgur.com/KXlUYnk.png">
+<meta property="og:image" content="http://i.imgur.com/iGiQV5e.png">
+<meta property="og:image" content="http://i.imgur.com/1Xbhek8.jpg">
+<meta property="og:image" content="http://i.imgur.com/IYP7c2j.png">
+<meta property="og:image" content="http://i.imgur.com/hqWgMjL.png">
+<meta property="og:image" content="http://i.imgur.com/kJvjfUr.png">
+<meta property="og:updated_time" content="2015-11-23T12:50:20.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TimeMap">
-<meta name="twitter:description" content="有多少和我一起走进这个尘世的人们已经离去了">
+<meta name="twitter:description" content="Building a time map is easy. First, imagine a series of events as dots along a time axis. The time intervals between each event are labeled as t1, t2, t3, t4, …
+A time map is simply a two-dimensional">
   
     <link rel="alternative" href="/atom.xml" title="你还想活吗" type="application/atom+xml">
   
@@ -113,7 +127,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/文章/" style="font-size: 10px;">文章</a>
+						<a href="/tags/TimeMap/" style="font-size: 10px;">TimeMap</a> <a href="/tags/文章/" style="font-size: 10px;">文章</a>
 					</div>
 				</section>
 				
@@ -216,7 +230,15 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TimeMap/">TimeMap</a></li></ul>
+	</div>
+
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/DataMining/">DataMining</a>
+	</div>
+
 
         <div class="clearfix"></div>
       </div>
@@ -224,7 +246,69 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Building a time map is easy. First, imagine a series of events as dots along a time axis. The time intervals between each event are labeled as t1, t2, t3, t4, …<br><img src="http://i.imgur.com/WLplFBS.png" alt=""></p>
+<p>A time map is simply a two-dimensional scatterplot, where the xy coordinates of the events are: (t1,t2), (t2, t3), (t3, t4), and so on. On a time map, the purple dot would be plotted like this:<br><img src="http://i.imgur.com/vp71JZ5.png" alt=""></p>
+<p>In other words, each point in the scatterplot represents an event. The x-coordinate of an event is the time between the event itself and the preceding event. An event’s y-coordinate is the time between the event itself and the subsequent event. The only points that are not displayed in a time map are the first and last events of the dataset.<br>Below are two simple examples:<br><img src="http://i.imgur.com/QkwvJDE.png" alt=""><br><img src="http://i.imgur.com/r6d2gVS.png" alt=""><br>For the sequence of evenly spaced events (A), the time map is effectively a single point, since the xy coordinates of the events are all identical. Sequence B is the same as A, except the timing of one event is slightly delayed. The resulting time map consists of effectively 4 points, making the shift easy to notice. Unless a very small bin size is chosen, the histogram over time for the two sequences would be exactly the same, concealing the changes in timing.</p>
+<p>To get a more intuitive feel for time maps, here’s a heuristic diagram, which is divided into quadrants:<br><img src="http://i.imgur.com/VtYFme9.png" alt=""></p>
+<p>The beauty of time maps is that long timelines are no longer an issue, since only the times between events are plotted. In cases where inter-event timing varies by orders of magnitude, we can scale the axes logarithmically. This allows the viewer to see time intervals that range from milliseconds to months in a single picture. Let’s see some real-world examples!</p>
+<p>#@WhiteHouse Tweets</p>
+<p>Twitter API allows you to gather the 3,200 most recent tweets written by a user. Using Twython, I downloaded tweets from the @WhiteHouse, which are mostly written by the president’s staff. Here is the time map for tweets written between January and September 2015:<br><img src="http://i.imgur.com/KXlUYnk.png" alt=""></p>
+<p>Each tweet is color-coded based on the time of day, and the time axes are scaled logarithmically. Two clusters correspond to the beginning and end of the workday, at least in terms of tweets. The first tweet of the day usually occurs between 9 AM and noon. The last tweet of the day can take place over a much wider time window.</p>
+<p>Interestingly, there are two clusters that represent different modes of behavior. In the cluster I call “business as usual”, tweets are written roughly once per hour. The tweets in the lower left occur in rapid succession, and correspond to major events.</p>
+<p>Since it’s hard to count the number of points in each cluster, a “heated time map” can be useful to show higher densities of points in red.</p>
+<p><img src="http://i.imgur.com/iGiQV5e.png" alt=""></p>
+<p>In a heated time map, we can still see isolated points. The added benefit is that we can also see densities when points are close together. It looks like the “business as usual” cluster has the most tweets, which justifies calling it “usual.”</p>
+<h1 id="Tweets_from_a_personal_account">Tweets from a personal account</h1><p>A public relations staff manages the Twitter account of the @WhiteHouse. What do the tweets from a personal Twitter account look like? Nicholas Felton is a graphic designer who specializes in information visualization. His work includes annual reports that compile graphics based on data about his life. Below is a heated time map of his tweets:</p>
+<p><img src="http://i.imgur.com/1Xbhek8.jpg" alt=""></p>
+<p>It does not contain the distinct clusters exhibited by the @WhiteHouse. Unlike a public relations account, tweets from personal accounts often do not adhere to a strict schedule. However, the time map still captures overall trends. Many tweets are written before and following 24-hour lulls. Also, a large number of points follow a “slow and steady” pattern, in which tweets are written roughly once per day.</p>
+<h1 id="Internet_bot">Internet bot</h1><p>Internet bots are computer programs that execute automated tasks on the web. Bots are<br>unwittingly installed on millions of personal computers when users click on certain links. A bot could even be operating from your computer as you read this sentence! I analyzed data from a company that provides monitoring services for various websites. This brings us back to the plot shown at the beginning of this blog:</p>
+<p><img src="http://i.imgur.com/IYP7c2j.png" alt=""></p>
+<p>It shows the number of website visits originating from a specific IP address (this IP address is different from the IP examined in my paper). While the histogram does contain important information about overall behavior, here is what the time map reveals:</p>
+<p><img src="http://i.imgur.com/hqWgMjL.png" alt=""></p>
+<p>These patterns of activity cannot be achieved by a mere mortal. A few prominent features immediately jump out: a block of “fast and steady” points, bars of points that correspond to “speeding up” and “slowing down,” and finally, some sparse points beyond them.</p>
+<p>The sparse points in the lower-right and upper-left represent long dormant periods between high levels of activity. This is consistent with the long gaps seen in the histogram. The bars of points correspond to 8-minute lulls between bursts of rapid activity. The bursts themselves are represented by the large block in the lower left, in which websites are visited in quick succession. The presence of bursts can be confirmed by examining an extremely zoomed-in histogram of the data:</p>
+<p><img src="http://i.imgur.com/kJvjfUr.png" alt=""></p>
+<h1 id="Creating_Time_Maps_with_Python">Creating Time Maps with Python</h1><p>Below is a simple Python program for creating a time map. It’s based on randomly generated data.</p>
+<pre><code><span class="keyword">import</span> numpy as np
+<span class="keyword">import</span> matplotlib.pylab as plt
+
+<span class="comment"># a sample array containing the timings of events in order: [1, 2.1, 2.9, 3.1...]</span>
+<span class="keyword">times</span> = np.cumsum(np.abs(np.random.normal(size=<span class="number">100</span>)))
+
+<span class="comment"># calculate time differences:</span>
+diffs = np.<span class="typename">array</span>([<span class="keyword">times</span>[i]-<span class="keyword">times</span>[i-<span class="number">1</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(<span class="keyword">times</span>))])
+
+xcoords = diffs[:-<span class="number">1</span>] <span class="comment"># all differences except the last</span>
+ycoords = diffs[<span class="number">1</span>:] <span class="comment"># all differences except the first</span>
+
+plt.plot(xcoords, ycoords, 'b.') <span class="comment"># make scatter plot with blue dots</span>
+plt.show()
+</code></pre><p>Now let’s create a heated time map. It builds off the program from above. Basically, a two-dimensional histogram is made, which counts the number of events within each grid-square of the time map. The histogram is treated like an image. Gaussian blur is then applied to the image, which smoothens out abrupt changes.</p>
+<pre><code>import scipy.ndimage <span class="keyword">as</span> ndi
+
+Nside=<span class="number">256</span> <span class="comment"># this is the number of bins along x and y for the histogram</span>
+width=<span class="number">8</span> <span class="comment"># the width of the Gaussian function along x and y when applying the blur operation</span>
+
+H = np.zeros((Nside,Nside)) <span class="comment"># a 'histogram' matrix that counts the number of points in each grid-square</span>
+
+max_diff = np.<span class="built_in">max</span>(diffs) <span class="comment"># maximum time difference</span>
+
+x_heat = (Nside-<span class="number">1</span>)*xcoords/max_diff <span class="comment"># the xy coordinates scaled to the size of the matrix</span>
+y_heat = (Nside-<span class="number">1</span>)*ycoords/max_diff <span class="comment"># subtract 1 since Python starts counting at 0, unlike Fortran and R</span>
+
+<span class="keyword">for</span> i <span class="operator">in</span> range(<span class="built_in">len</span>(xcoords)): <span class="comment"># loop over all points to calculate the population of each bin</span>
+H[x_heat[i], y_heat[i]] += <span class="number">1</span> <span class="comment"># Increase count by 1</span>
+<span class="comment">#here, the integer part of x/y_heat[i] is automatically taken</span>
+
+H = ndi.gaussian_filter(H,width) <span class="comment"># apply Gaussian blur</span>
+H = np.<span class="built_in">transpose</span>(H) <span class="comment"># so that the orientation is the same as the scatter plot</span>
+
+plt.imshow(H, origin=<span class="string">'lower'</span>) <span class="comment"># display H as an image</span>
+plt.show()
+</code></pre><p>Python files for downloading tweets and creating time maps can also be found on my github page.</p>
+<h1 id="Conclusion">Conclusion</h1><p>I’ve given three examples that demonstrate the exploratory value of time maps. In<br>all cases, they immediately revealed underlying patterns which would be extremely time-consuming to discover with histograms. Nevertheless, time maps certainly do not replace other time visualizations; they augment them. The best visual explorations will involve time maps and other graphics as well. For instance, both the time map and the histogram display important aspects of the data, and should be used in concert with each other.</p>
+<p>Picasso captured the full extent of an object by displaying it from multiple perspectives<br>within the same painting. Similarly, time maps distill a dataset across multiple timescales within a single image. Given their easy implementation and ability to reveal hidden structure, time maps should become an invaluable tool in our increasingly data-driven world.</p>
+
       
     </div>
     
