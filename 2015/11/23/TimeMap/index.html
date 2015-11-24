@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>TimeMap | 你还想活吗</title>
+  <title>时间地图:离散事件可视化 | 你还想活吗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Building a time map is easy. First, imagine a series of events as dots along a time axis. The time intervals between each event are labeled as t1, t2, t3, t4, …
+  <meta name="description" content="构造时间地图. 首先,把一系列事件想象成时间轴上的点，相邻事件间的时间间隔标示为 t1, t2, t3, t4, …
 
-A time map is simply a two-dimensional">
+一个时间地图可表示为一个二维的离散点，其中，事件的xy坐标是：(t1,t2), (t2, t3), (t3, t4), 等等.在时间地图上，紫色的点可被绘成如下： 
+换句话说，散点图上的每个点代表一个事件，它的x坐标是本事件与前一时刻事件间的时间间隔，y坐标是本事件与后一时刻事件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TimeMap">
+<meta property="og:title" content="时间地图:离散事件可视化">
 <meta property="og:url" content="http://yoursite.com/2015/11/23/TimeMap/index.html">
 <meta property="og:site_name" content="你还想活吗">
-<meta property="og:description" content="Building a time map is easy. First, imagine a series of events as dots along a time axis. The time intervals between each event are labeled as t1, t2, t3, t4, …
+<meta property="og:description" content="构造时间地图. 首先,把一系列事件想象成时间轴上的点，相邻事件间的时间间隔标示为 t1, t2, t3, t4, …
 
-A time map is simply a two-dimensional">
+一个时间地图可表示为一个二维的离散点，其中，事件的xy坐标是：(t1,t2), (t2, t3), (t3, t4), 等等.在时间地图上，紫色的点可被绘成如下： 
+换句话说，散点图上的每个点代表一个事件，它的x坐标是本事件与前一时刻事件间的时间间隔，y坐标是本事件与后一时刻事件">
 <meta property="og:image" content="http://i.imgur.com/WLplFBS.png">
 <meta property="og:image" content="http://i.imgur.com/vp71JZ5.png">
 <meta property="og:image" content="http://i.imgur.com/r6d2gVS.png">
@@ -25,12 +27,13 @@ A time map is simply a two-dimensional">
 <meta property="og:image" content="http://i.imgur.com/IYP7c2j.png">
 <meta property="og:image" content="http://i.imgur.com/hqWgMjL.png">
 <meta property="og:image" content="http://i.imgur.com/kJvjfUr.png">
-<meta property="og:updated_time" content="2015-11-23T13:13:59.623Z">
+<meta property="og:updated_time" content="2015-11-24T05:27:12.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TimeMap">
-<meta name="twitter:description" content="Building a time map is easy. First, imagine a series of events as dots along a time axis. The time intervals between each event are labeled as t1, t2, t3, t4, …
+<meta name="twitter:title" content="时间地图:离散事件可视化">
+<meta name="twitter:description" content="构造时间地图. 首先,把一系列事件想象成时间轴上的点，相邻事件间的时间间隔标示为 t1, t2, t3, t4, …
 
-A time map is simply a two-dimensional">
+一个时间地图可表示为一个二维的离散点，其中，事件的xy坐标是：(t1,t2), (t2, t3), (t3, t4), 等等.在时间地图上，紫色的点可被绘成如下： 
+换句话说，散点图上的每个点代表一个事件，它的x坐标是本事件与前一时刻事件间的时间间隔，y坐标是本事件与后一时刻事件">
   
     <link rel="alternative" href="/atom.xml" title="你还想活吗" type="application/atom+xml">
   
@@ -224,7 +227,7 @@ A time map is simply a two-dimensional">
         
   
     <h1 class="article-title" itemprop="name">
-      TimeMap
+      时间地图:离散事件可视化
     </h1>
   
 
@@ -248,30 +251,29 @@ A time map is simply a two-dimensional">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Building a time map is easy. First, imagine a series of events as dots along a time axis. The time intervals between each event are labeled as t1, t2, t3, t4, …</p>
+        <p>构造时间地图. 首先,把一系列事件想象成时间轴上的点，相邻事件间的时间间隔标示为 t1, t2, t3, t4, …</p>
 <p><img src="http://i.imgur.com/WLplFBS.png" alt=""></p>
-<p>A time map is simply a two-dimensional scatterplot, where the xy coordinates of the events are: (t1,t2), (t2, t3), (t3, t4), and so on. On a time map, the purple dot would be plotted like this:<br> <img src="http://i.imgur.com/vp71JZ5.png" alt=""></p>
-<p>In other words, each point in the scatterplot represents an event. The x-coordinate of an event is the time between the event itself and the preceding event. An event’s y-coordinate is the time between the event itself and the subsequent event. The only points that are not displayed in a time map are the first and last events of the dataset.<br>Below are two simple examples:<br> <img src="http://i.imgur.com/r6d2gVS.png" alt=""><br>For the sequence of evenly spaced events (A), the time map is effectively a single point, since the xy coordinates of the events are all identical. Sequence B is the same as A, except the timing of one event is slightly delayed. The resulting time map consists of effectively 4 points, making the shift easy to notice. Unless a very small bin size is chosen, the histogram over time for the two sequences would be exactly the same, concealing the changes in timing.</p>
-<p>To get a more intuitive feel for time maps, here’s a heuristic diagram, which is divided into quadrants:<br> <img src="http://i.imgur.com/VtYFme9.png" alt=""></p>
-<p>The beauty of time maps is that long timelines are no longer an issue, since only the times between events are plotted. In cases where inter-event timing varies by orders of magnitude, we can scale the axes logarithmically. This allows the viewer to see time intervals that range from milliseconds to months in a single picture. Let’s see some real-world examples!</p>
-<p>#@WhiteHouse Tweets</p>
-<p>Twitter API allows you to gather the 3,200 most recent tweets written by a user. Using Twython, I downloaded tweets from the @WhiteHouse, which are mostly written by the president’s staff. Here is the time map for tweets written between January and September 2015:<br><img src="http://i.imgur.com/KXlUYnk.png" alt=""></p>
-<p>Each tweet is color-coded based on the time of day, and the time axes are scaled logarithmically. Two clusters correspond to the beginning and end of the workday, at least in terms of tweets. The first tweet of the day usually occurs between 9 AM and noon. The last tweet of the day can take place over a much wider time window.</p>
-<p>Interestingly, there are two clusters that represent different modes of behavior. In the cluster I call “business as usual”, tweets are written roughly once per hour. The tweets in the lower left occur in rapid succession, and correspond to major events.</p>
-<p>Since it’s hard to count the number of points in each cluster, a “heated time map” can be useful to show higher densities of points in red.</p>
-<p> <img src="http://i.imgur.com/iGiQV5e.png" alt=""></p>
-<p>In a heated time map, we can still see isolated points. The added benefit is that we can also see densities when points are close together. It looks like the “business as usual” cluster has the most tweets, which justifies calling it “usual.”</p>
-<h1 id="Tweets_from_a_personal_account">Tweets from a personal account</h1><p>A public relations staff manages the Twitter account of the @WhiteHouse. What do the tweets from a personal Twitter account look like? Nicholas Felton is a graphic designer who specializes in information visualization. His work includes annual reports that compile graphics based on data about his life. Below is a heated time map of his tweets:</p>
+<p>一个时间地图可表示为一个二维的离散点，其中，事件的xy坐标是：<br>(t1,t2), (t2, t3), (t3, t4), 等等.在时间地图上，紫色的点可被绘成如下：<br> <img src="http://i.imgur.com/vp71JZ5.png" alt=""></p>
+<p>换句话说，散点图上的每个点代表一个事件，它的x坐标是本事件与前一时刻事件间的时间间隔，y坐标是本事件与后一时刻事件间的时间间隔，时间集中仅有第一个点和最后一个点不被展示。下面是两个简单的示例:</p>
+<p> <img src="http://i.imgur.com/r6d2gVS.png" alt=""></p>
+<p>对于A：事件均匀分布，由于xy坐标都相等，时间地图是一个点。对于B：事件间的时间间隔分布不均，某些事件稍微有些延迟。时间地图就包含4个点。除非我们选择时间刻度很小的直方图，否则我们看到这两个序列完全一样，看不到隐藏在时间内的变化。为了得到直观的感觉:这是一个被分成四象限的启发式经验图。</p>
+<p> <img src="http://i.imgur.com/VtYFme9.png" alt=""></p>
+<p>时间地图的美在于时间线将不再是问题，这是因为我们仅仅画出了相邻事件间的时间间隔，对于事件间的时间间隔变化巨大的情况，我们可以取对数坐标。这就使得我们可以在同一副图中描绘出时间间隔分布在毫秒至数月的时间地图。下面我们来看看真实世界中的情况。</p>
+<h1 id="白宫推文">白宫推文</h1><p>Twitter API 可以允许你最多收集一个用户的3200条推文。用Twython，我下载了@WhiteHouse的推文，这些推文都是总统的助理团队发布的。下面这幅图是2015年一月至九月间的时间地图。</p>
+<p><img src="http://i.imgur.com/KXlUYnk.png" alt=""></p>
+<p>每条推文都基于发布时间进行颜色编码，并且时间轴经过对数缩放，两个簇分别对应工作日的开始和结束，工作日的第一条推文通常在上午9点或者中午，最后一条推文间隔一个更大的时间窗。<br>有趣的是，这两个簇代表不同的行为模式，我们称左下角的簇为簇I，时间间隔短促，一般对应重大新闻。右上角对应簇II，它是“例行公事”，一般一小时发布一条推文。<br>我们很难数出每个簇中的点数，热力时间图可以用红色显示出高密度点。</p>
+<p><img src="http://i.imgur.com/iGiQV5e.png" alt=""></p>
+<p>在热力时间图中，我们仍能看到离散点，“例行公事”这个簇拥有最多的点。</p>
+<h1 id="个人账户的推文">个人账户的推文</h1><p>@WhiteHouse这个账号是由一个团队运营的，那么个人的推特账号的时间地图又是怎样的一番情景呢？<br>下面是@Nicholas Felton的推文时间地图</p>
 <p> <img src="http://i.imgur.com/1Xbhek8.jpg" alt=""></p>
-<p>It does not contain the distinct clusters exhibited by the @WhiteHouse. Unlike a public relations account, tweets from personal accounts often do not adhere to a strict schedule. However, the time map still captures overall trends. Many tweets are written before and following 24-hour lulls. Also, a large number of points follow a “slow and steady” pattern, in which tweets are written roughly once per day.</p>
-<h1 id="Internet_bot">Internet bot</h1><p>Internet bots are computer programs that execute automated tasks on the web. Bots are<br>unwittingly installed on millions of personal computers when users click on certain links. A bot could even be operating from your computer as you read this sentence! I analyzed data from a company that provides monitoring services for various websites. This brings us back to the plot shown at the beginning of this blog:</p>
+<p>与@WhiteHouse这个公共推特不同，个人推特没有严格的计划安排，它的时间地图也就没有两个簇，但我们仍然能发现他的趋势：服从24小时规律，大量的点遵循缓慢且平稳的模式，一般每天发布一条推文。</p>
+<h1 id="网络机器人">网络机器人</h1><p>网络机器人就是自动执行任务的程序，当PC用户点击某些链接时就会不知不觉的安装在电脑中，我分析了一个为各个网站提供监控服务的公司的数据。</p>
 <p><img src="http://i.imgur.com/IYP7c2j.png" alt=""></p>
-<p>It shows the number of website visits originating from a specific IP address (this IP address is different from the IP examined in my paper). While the histogram does contain important information about overall behavior, here is what the time map reveals:</p>
+<p>它显示出特定IP对网站的访问量，这个直方图包含了整体行为的重要信息。下面就是这个时间地图：</p>
 <p><img src="http://i.imgur.com/hqWgMjL.png" alt=""></p>
-<p>These patterns of activity cannot be achieved by a mere mortal. A few prominent features immediately jump out: a block of “fast and steady” points, bars of points that correspond to “speeding up” and “slowing down,” and finally, some sparse points beyond them.</p>
-<p>The sparse points in the lower-right and upper-left represent long dormant periods between high levels of activity. This is consistent with the long gaps seen in the histogram. The bars of points correspond to 8-minute lulls between bursts of rapid activity. The bursts themselves are represented by the large block in the lower left, in which websites are visited in quick succession. The presence of bursts can be confirmed by examining an extremely zoomed-in histogram of the data:</p>
+<p>这些模式不可能是一个人产生的，我们发现一些突出的特征：一些”快速且稳定“的点对应直方图的”加速“和”减速“的柱条。不包含一些稀疏的点。<br>在左上方和右下方的那些稀疏的点，代表频繁活动中的静止阶段。这和直方图中的长间隙相对应。</p>
 <p> <img src="http://i.imgur.com/kJvjfUr.png" alt=""></p>
-<h1 id="Creating_Time_Maps_with_Python">Creating Time Maps with Python</h1><p>Below is a simple Python program for creating a time map. It’s based on randomly generated data.</p>
+<h1 id="用Python创建时间图">用Python创建时间图</h1><p>下面是基于随机生成的数据点创建的时间图。</p>
 <pre><code><span class="keyword">import</span> numpy as np
 <span class="keyword">import</span> matplotlib.pylab as plt
 
@@ -286,7 +288,7 @@ ycoords = diffs[<span class="number">1</span>:] <span class="comment"># all diff
 
 plt.plot(xcoords, ycoords, 'b.') <span class="comment"># make scatter plot with blue dots</span>
 plt.show()
-</code></pre><p>Now let’s create a heated time map. It builds off the program from above. Basically, a two-dimensional histogram is made, which counts the number of events within each grid-square of the time map. The histogram is treated like an image. Gaussian blur is then applied to the image, which smoothens out abrupt changes.</p>
+</code></pre><p>基于上面的程序创建时间热力图，通过统计栅格中的事件的个数，我们建立一个二维直方图，把直方图看成一幅图像，运用高斯模糊来平滑图像中的突变。</p>
 <pre><code>import scipy.ndimage <span class="keyword">as</span> ndi
 
 Nside=<span class="number">256</span> <span class="comment"># this is the number of bins along x and y for the histogram</span>
@@ -308,9 +310,8 @@ H = np.<span class="built_in">transpose</span>(H) <span class="comment"># so tha
 
 plt.imshow(H, origin=<span class="string">'lower'</span>) <span class="comment"># display H as an image</span>
 plt.show()
-</code></pre><p>Python files for downloading tweets and creating time maps can also be found on my github page.</p>
-<h1 id="Conclusion">Conclusion</h1><p>I’ve given three examples that demonstrate the exploratory value of time maps. In<br>all cases, they immediately revealed underlying patterns which would be extremely time-consuming to discover with histograms. Nevertheless, time maps certainly do not replace other time visualizations; they augment them. The best visual explorations will involve time maps and other graphics as well. For instance, both the time map and the histogram display important aspects of the data, and should be used in concert with each other.</p>
-<p>Picasso captured the full extent of an object by displaying it from multiple perspectives<br>within the same painting. Similarly, time maps distill a dataset across multiple timescales within a single image. Given their easy implementation and ability to reveal hidden structure, time maps should become an invaluable tool in our increasingly data-driven world.</p>
+</code></pre><p>可以在我的<a href="https://github.com/maxcw/time-maps" title="github" target="_blank" rel="external">github</a>下载对应的python程序。<br>在 <a href="https://districtdatalabs.silvrback.com/time-maps-visualizing-discrete-events-across-many-timescales" target="_blank" rel="external">Time Map</a>上可以找到详细原文说明。</p>
+<h1 id="结论">结论</h1><p>时间图可以揭示潜在的模式，它和直方图一起各自从不同方面反映数据的特征。Picasso在一副画作中通过多个视角全面展示一个物体的内容。类似的，时间图在多重时间尺度上提取内在隐式结构，在数据驱动的今天，它是潜力巨大的工具。</p>
 
       
     </div>
@@ -351,7 +352,7 @@ plt.show()
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="TimeMap" data-title="TimeMap" data-url="http://yoursite.com/2015/11/23/TimeMap/"></div>
+	<div class="ds-thread" data-thread-key="TimeMap" data-title="时间地图:离散事件可视化" data-url="http://yoursite.com/2015/11/23/TimeMap/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
