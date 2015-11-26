@@ -27,7 +27,7 @@ t = &quot;double-quotes are also fine&quot;
 u = [[ Double brackets
           start and end
           mul">
-<meta property="og:updated_time" content="2015-11-26T14:23:31.475Z">
+<meta property="og:updated_time" content="2015-11-26T14:37:57.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lua学习">
 <meta name="twitter:description" content="lua基础一、注释单行注释：两个破折号多行注释：[[ … ]]
@@ -352,8 +352,13 @@ f = <span class="function"><span class="keyword">function</span> <span class="pa
 <span class="comment">-- 调用只有一个字符串的参数，不需要括号:</span>
 <span class="built_in">print</span> <span class="string">'hello'</span>  <span class="comment">-- Works fine.</span>
 </code></pre><h2 id="四、表">四、表</h2><p>Tables ： 哈希查找的关联数组，和dictionaries、map类似，是lua仅有的复合数据结构。</p>
-<p>– Dict的的键默认是字符串的<br>    t = {key1 = ‘value1’, key2 = false}<br>    print(t.key1)  – 输出 ‘value1’.<br>    t.newKey = {}  – 添加一个新的 key/value 对.<br>    t.key2 = nil   – 从table中移除 key2.</p>
-<pre><code>表常用的的键一般是数字或者字符串
+<pre><code>Dict的的键默认是字符串的
+t = {key1 = <span class="string">'value1'</span>, key2 = <span class="keyword">false</span>}
+<span class="built_in">print</span>(t.key1)  <span class="comment">-- 输出 'value1'.</span>
+t.newKey = {}  <span class="comment">-- 添加一个新的 key/value 对.</span>
+t.key2 = <span class="keyword">nil</span>   <span class="comment">-- 从table中移除 key2.</span>
+
+表常用的的键一般是数字或者字符串
 u = {[<span class="string">'@!#'</span>] = <span class="string">'qbert'</span>, [{}] = <span class="number">1729</span>, [<span class="number">6.28</span>] = <span class="string">'tau'</span>}
 <span class="built_in">print</span>(u[<span class="number">6.28</span>])  <span class="comment">-- 输出"tau"</span>
 a = u[<span class="string">'@!#'</span>]    <span class="comment">-- a = 'qbert'.</span>
