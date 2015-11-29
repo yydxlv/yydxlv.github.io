@@ -27,7 +27,7 @@ t = &quot;double-quotes are also fine&quot;
 u = [[ Double brackets
           start and end
           mul">
-<meta property="og:updated_time" content="2015-11-26T14:37:57.708Z">
+<meta property="og:updated_time" content="2015-11-29T06:54:22.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lua学习">
 <meta name="twitter:description" content="lua基础一、注释单行注释：两个破折号多行注释：[[ … ]]
@@ -499,7 +499,7 @@ mod.sayHello()   <span class="comment">-- Says hello to Hrunkner.</span>
 <span class="comment">-- 错误; sayMyName 只存在于 mod.lua:</span>
 mod.sayMyName()  <span class="comment">-- error</span>
 
-<span class="comment">-- require's 的返回值是经过缓存的，所以一个文件最多运行一次，无论require多少次。</span>
+<span class="comment">-- require 的返回值是经过缓存的，所以一个文件最多运行一次，无论require多少次。</span>
 <span class="comment">-- 假设 mod2.lua 包含 "print('Hi!')".</span>
 <span class="keyword">local</span> a = <span class="built_in">require</span>(<span class="string">'mod2'</span>)  <span class="comment">-- 输出 Hi!</span>
 <span class="keyword">local</span> b = <span class="built_in">require</span>(<span class="string">'mod2'</span>)  <span class="comment">-- 无输出; a=b.</span>
@@ -522,6 +522,7 @@ g()                            <span class="comment">-- 输出343; 此前无输�
 <p><a href="http://love2d.org/" target="_blank" rel="external">love 2D游戏引擎</a></p>
 <p><a href="http://www.lua.org/pil/contents.html" target="_blank" rel="external">lua官方学习文档</a></p>
 <p><a href="https://apaszke.github.io/torch-internals.html" target="_blank" rel="external">A quick tour of Torch internals</a></p>
+<p><a href="http://apaszke.github.io/lstm-explained.html" target="_blank" rel="external">基于Torch的LSTM实现</a></p>
 
       
     </div>
